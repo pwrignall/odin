@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Righteous&display=swap');
+
+:root {
+    --block-font: 'Bungee Shade', sans-serif;
+    --normal-font: 'Righteous', sans-serif;
+}
 
 body {
-    font-family: 'Bree Serif', serif;
+    font-family: var(--normal-font);
     background: rgb(247, 131, 236);
     background: linear-gradient(180deg, rgba(247, 131, 236, 1) 0%, rgba(176, 44, 255, 1) 100%);
     color: #292216;
@@ -9,7 +14,7 @@ body {
 }
 
 h1 {
-    font-family: 'Bungee Shade', sans-serif;
+    font-family: var(--block-font);
     font-size: 2.5rem;
 }
 
@@ -47,6 +52,7 @@ main {
 
 #weapon-choices button.button-inactive:hover {
     cursor: default;
+    border: 3px solid rgba(176, 44, 255, 0);
 }
 
 #weapon-choices button:hover {
@@ -60,15 +66,15 @@ main {
     width: 6rem;
     color: #f9f9f9;
     background-color: #292216;
-    font-family: 'Bree Serif', serif;
-    font-size: 1.4rem;
-    border: 0;
+    font-family: var(--normal-font);
+    font-size: 1.2rem;
+    border: 3px solid rgba(176, 44, 255, 0);
     margin: 0 0.2rem;
 }
 
 #current-round {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 23vw 44vw 23vw;
     justify-items: center;
     align-items: center;
     margin: 2rem 0 1.5rem 0;
@@ -77,26 +83,27 @@ main {
 }
 
 #current-round span {
-    font-family: 'Bungee Shade', sans-serif;
+    font-family: var(--block-font);
     font-size: 6rem;
 }
 
 #game-result {
     text-align: center;
-    font-family: 'Bungee Shade', sans-serif;
+    font-family: var(--block-font);
     font-size: 3rem;
     margin-top: 1rem;
 }
 
 #game-result button {
-    font-family: 'Bree Serif', serif;
+    font-family: var(--normal-font);
     margin-top: 1.8rem;
     color: rgb(247, 131, 236);
     background-color: #292216;
     border: 0;
-    padding: 0.5rem 1.2rem;
+    padding: 0.7rem 1.5rem;
     border-radius: 0.3rem;
     font-size: 1.2rem;
+    border: 2px solid rgba(176, 44, 255, 0);
 }
 
 #game-result button:hover {
