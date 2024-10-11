@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Rock, Paper, Scissors</title>
+    <title>Rock, Paper, Scissors, Lizard, Spock</title>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/reset.css">
@@ -14,7 +14,7 @@
 <body>
 
     <header>
-        <h1>Rock, Paper, Scissors</h1>
+        <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
     </header>
 
     <main>
@@ -24,6 +24,8 @@
             <button id="rock" class="player-options">Rock</button>
             <button id="paper" class="player-options">Paper</button>
             <button id="scissors" class="player-options">Scissors</button>
+            <button id="lizard" class="player-options">Lizard</button>
+            <button id="spock" class="player-options">Spock</button>
         </div>
 
         <div id="current-round"></div>
@@ -35,7 +37,7 @@
     <script>
 
         function computerPlay() {
-            let computerOptions = ['Rock', 'Paper', 'Scissors'];
+            let computerOptions = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
             return computerOptions[Math.floor(Math.random() *
                 computerOptions.length)]
         }
@@ -49,28 +51,76 @@
                     case 'Rock':
                         switch (computerSelection) {
                             case 'Paper':
-                                return 'You lose! Paper beats Rock';
+                                return 'You lose! Paper covers Rock';
                                 break;
                             case 'Scissors':
-                                return 'You win! Rock beats Scissors';
+                                return 'You win! Rock crushes Scissors';
+                                break;
+                            case 'Lizard':
+                                return 'You win! Rock crushes Lizard';
+                                break;
+                            case 'Spock':
+                                return 'You lose! Spock vaporises Rock';
                                 break;
                         }
                     case 'Paper':
                         switch (computerSelection) {
                             case 'Rock':
-                                return 'You win! Paper beats Rock';
+                                return 'You win! Paper covers Rock';
                                 break;
                             case 'Scissors':
-                                return 'You lose! Scissors beats Paper';
+                                return 'You lose! Scissors cuts Paper';
+                                break;
+                            case 'Lizard':
+                                return 'You lose! Lizard eats Paper';
+                                break;
+                            case 'Spock':
+                                return 'You win! Paper disproves Spock';
                                 break;
                         }
                     case 'Scissors':
                         switch (computerSelection) {
                             case 'Rock':
-                                return 'You lose! Rock beats Scissors';
+                                return 'You lose! Rock crushes Scissors';
                                 break;
                             case 'Paper':
-                                return 'You win! Scissors beats Paper';
+                                return 'You win! Scissors cuts Paper';
+                                break;
+                            case 'Lizard':
+                                return 'You win! Scissors decapitates Lizard';
+                                break;
+                            case 'Spock':
+                                return 'You lose! Spock smashes Scissors';
+                                break;
+                        }
+                    case 'Lizard':
+                        switch (computerSelection) {
+                            case 'Rock':
+                                return 'You lose! Rock crushes Lizard';
+                                break;
+                            case 'Paper':
+                                return 'You win! Lizard eats Paper';
+                                break;
+                            case 'Scissors':
+                                return 'You lose! Scissors decapitates Lizard';
+                                break;
+                            case 'Spock':
+                                return 'You win! Lizard poisons Spock';
+                                break;
+                        }
+                    case 'Spock':
+                        switch (computerSelection) {
+                            case 'Rock':
+                                return 'You win! Spock vaporises Rock';
+                                break;
+                            case 'Paper':
+                                return 'You lose! Paper disproves Spock';
+                                break;
+                            case 'Scissors':
+                                return 'You win! Spock smashes Scissors';
+                                break;
+                            case 'Lizard':
+                                return 'You lose! Lizard poisons Spock';
                                 break;
                         }
                     default: 'You didn\'t enter a valid choice.'
@@ -100,9 +150,9 @@
             buttons.forEach(button => button.classList.add('button-inactive'));
 
             if (string == 'playerWin') {
-                pGameResult.textContent = 'YOU WON THE GAME!';
+                pGameResult.textContent = 'YOU WON!';
             } else {
-                pGameResult.textContent = 'YOU LOST THE GAME!';
+                pGameResult.textContent = 'YOU LOST!';
             }
             divGameResult.appendChild(pGameResult);
 
